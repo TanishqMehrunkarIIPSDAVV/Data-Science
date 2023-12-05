@@ -1,0 +1,12 @@
+library(corrr)
+library(ggcorrplot)
+library(FactoMineR)
+library(factoextra)
+x <- read.csv("./Data-Science/life.csv")
+num_x <- x[, 3:21]
+x_norm <- scale(num_x)
+corr_matrix <- cor(x_norm)
+print(ggcorrplot(corr_matrix))
+pca <- princomp(corr_matrix)
+print(summary(pca))
+print(fviz_eig(pca, addlabels = TRUE))
