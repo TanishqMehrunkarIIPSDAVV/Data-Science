@@ -3,5 +3,5 @@ for (i in x) {
   if (is.numeric(i)) {
     y <- as.data.frame(scale(i))
   }
-  print(y)
+  str(y)
 }
